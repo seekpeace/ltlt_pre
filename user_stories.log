@@ -1,0 +1,13 @@
+user stories:
+
+1 enter address of a home or homes customer wants to bid on
+
+2 render a pdf of standard offer to buy contract and fax the info the listing agent or owner
+
+3 add options to custmize offer contract -
+1 - seller pays for closing
+2 - other conditions
+
+4 - make userlogin and collect payment
+
+5 - update bid offer with results.

@@ -8,7 +8,6 @@ class CreateHandlers < ActiveRecord::Migration
       t.bigint    :handler_fax
       t.string    :handler_email
 
-      t.references :home
     end
   end
 end

@@ -20,6 +20,8 @@ class CreateHomes < ActiveRecord::Migration
       t.integer   :days
 
       t.float     :buyer_commission
+
+      t.references :handler
       t.timestamps
 
     end

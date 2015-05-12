@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20150511185115) do
     t.integer "handler_work",  limit: 8
     t.integer "handler_fax",   limit: 8
     t.string  "handler_email"
-    t.integer "home_id"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -49,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150511185115) do
     t.integer  "built"
     t.integer  "days"
     t.float    "buyer_commission"
+    t.integer  "handler_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

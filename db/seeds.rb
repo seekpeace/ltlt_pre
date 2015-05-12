@@ -312,13 +312,8 @@ homes_array.each do |home|
     else
         index = Handler.where(handler_email: current_email).first[:id]
     end
-    # puts("INDEX")
-    # puts(index)
-    # puts("INDEX")
-    # home[:handler_id] = index
-    # new_index = home[:handler_id]
-    # puts("NEW INDEX")
-    # puts(new_index)
+    home[:handler_id] = index
+    #this doesn't work home[handler: index] but why?##
     current_home = Home.create!(home.except(:agent_status, :handler_name, :handler_work, :handler_fax, :handler_email))
 end
 

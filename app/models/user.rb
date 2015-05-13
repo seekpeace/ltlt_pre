@@ -20,5 +20,13 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
 
   has_secure_password
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, allow_blank: true
+  #has_secure_password enforces presence validations upon object creation so the above
+  #allow_blank: true added is when user edits their info but not their password
+
+  # will finish implementing in version 2
+  # # Returns a random token to use until it is destroyed when user logs out.
+  # def User.new_token
+  #   SecureRandom.urlsafe_base64
+  # end
 end

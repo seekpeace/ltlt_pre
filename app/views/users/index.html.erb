@@ -2,12 +2,16 @@
 <!-- This page will only be viewable by the admin account -->
 <h1>All Users</h1>
 
+
 <div class = "user_list">
+
+<%= will_paginate %>
 <ul id = "user_item">
   <% @users.each do |user| %>
     <li><%= link_to user.name, user_path(user) %></li>
 <%end%>
 </ul>
+<%= will_paginate %>
 
 </div>
 

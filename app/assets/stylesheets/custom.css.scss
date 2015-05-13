@@ -1,0 +1,143 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+div.center.jumbotron{
+  background: transparent;
+}
+.div.center.jumbotron{
+  border: none;
+  margin: none;
+  padding: none;
+}
+
+.company_name{
+  color:black;
+}
+
+body {
+background-image: image-url('house.jpg');
+background-repeat: no-repeat;
+background-size: 100%;
+}
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  // color: #fff;
+  color: yellow;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  // color: #fff;
+  color: yellow;
+  text-decoration: none;
+}
+
+
+
+.navbar-inverse {
+  background-color: #E8E825;
+  }
+
+// http://bootstrap3-menu.codedorigin.com/#sthash.4O9GLxRo.dpbs
+
+.action {
+    margin-bottom: 0px;
+    height: 350px;
+    color: black;
+    text-shadow: gray .4em .4em .4em;
+    background: transparent;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.left {
+  text-align: center;
+}
+
+.left h1 {
+  margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+li{
+  background-position: left;
+  padding-left: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  // color: #777;
+  color: black;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  // color: #222;
+  color: white;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}

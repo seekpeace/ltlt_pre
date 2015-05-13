@@ -14,21 +14,24 @@
 users_array = [
   {
     email: "seekpeace@gmail.com",
-    password: "DaFool",
     name: "Enoch OhShin",
-    number: 2224445555
+    number: 2224445555,
+    password: "ImDaFool",
+    password_confirmation: "ImDaFool"
   },
   {
     email: "obama@whitehouse.gov",
-    password: "BetterThanBush",
     name: "Barack Hussein Obama II",
-    number: 2223334444
+    number: 2223334444,
+    password: "BetterThanBush",
+    password_confirmation: "BetterThanBush"
   },
   {
     email: "marvin@mars.com",
-    password: "DestroyEarth",
     name: "Marvin the Martian",
-    number: 1113334444
+    number: 1113334444,
+    password: "DestroyEarth",
+    password_confirmation: "DestroyEarth"
   }
 ]
 

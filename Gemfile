@@ -1,6 +1,7 @@
+gem 'bcrypt', '3.1.7'
 
 gem 'bootstrap-sass'
-gem 'devise'
+# gem 'devise'
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

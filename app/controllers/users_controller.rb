@@ -3,12 +3,23 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @users = User.all.paginate(page: params[:page])
-    # @users = User.all
+    # @users = User.all.paginate(page: params[:page])
+    @users = User.all
   end
 
   def show
+    @homes_without_bids = []
+    @homes_with_bids = []
     @user = User.find(params[:id])
+    @bids = Bid.where(user_id: params[:id])
+
+    @bids.each do |bid|
+      if ((bid["value"] != nil) || (bid["value"] != 0))
+        @homes_with_bids.push(Home.find(bid["home_id"]))
+      else
+        @homes_without_bids.push(Home.find(bid["home_id"]))
+      end
+    end
   end
 
   def new
@@ -18,22 +29,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.(params[:user])
+    @user = User.new(user_params)
     if @user.save
-
+      log_in @user
+      flash[:success] = "Welcome to LTLT!"
+      redirect_to @user
     else
       render 'new'
     end
-  end
-
-  def create
-  @user = User.new(user_params)
-  if @user.save
-    log_in @user
-    flash[:success] = "Welcome to LTLT!"
-    redirect_to @user
-  else
-    render 'new'
   end
 
   def edit
@@ -52,9 +55,13 @@ class UsersController < ApplicationController
     end
   end
 
-end
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
+  end
 
-private
+  private
 
     def user_params
       params.require(:user).permit(:name, :email, :number, :password,
@@ -74,14 +81,4 @@ private
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
-
 end
-
-#   users GET    /users(.:format)          users#index
-#          POST   /users(.:format)          users#create
-# new_user GET    /users/new(.:format)      users#new
-# edit_user GET    /users/:id/edit(.:format) users#edit
-#     user GET    /users/:id(.:format)      users#show
-#          PATCH  /users/:id(.:format)      users#update
-#          PUT    /users/:id(.:format)      users#update
-#          DELETE /users/:id(.:format)      users#destroy

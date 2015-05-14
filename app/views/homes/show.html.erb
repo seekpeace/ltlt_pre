@@ -1,0 +1,31 @@
+<% provide(:title, @user.name 's homes') %>
+<h1><%= @user.name %></h1>
+
+<ul>
+  <li>Email: <%= @user.email %></li>
+  <li>Contact Number: <%= @user.number %></li>
+</ul>
+
+@homes_with_bids.push(home)
+else
+@home_without_bids.push(home)
+
+<div class="with_bids">
+  <ul>
+    <%= @homes_with_bids.each do | home | %>
+    <li class = "bid_items">
+      <%= link_to home.street, user_home_path(home) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="without_bids">
+  <ul>
+  <%= @homes_without_bids.each do | home | %>
+    <li class = "no_bid_itmes">
+      <%= link_to home.street, user_home_path(home) %>
+    </li>
+  <% end %>
+  </ul>
+<div>

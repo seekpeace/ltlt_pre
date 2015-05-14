@@ -1,3 +1,5 @@
+<script src="user_show.js"></script>
+
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
 
@@ -5,3 +7,34 @@
   <li>Email: <%= @user.email %></li>
   <li>Contact Number: <%= @user.number %></li>
 </ul>
+
+
+<div id="new-home">
+  <input id="new-home-id" type="string" placeholder="Enter MLS ID"/>
+  <button id="new-home-button">Add MLS ID</button>
+</div>
+<%=@bids.inspect %>
+  <div class = "bid_list">
+    <ul>
+      <p>Homes with Bids</p>
+      <% @homes_with_bids.each do | home| %>
+        <li class ="bid_items"> <%= home.street_address %> </li>
+        <% @bid = @bids.find_by(home_id: home.id) %>
+        <%= link_to "send offer", user_bid_path(@user, @bid), class: "btn btn-lg btn-primary btn-sm" %>
+        <% end %>
+    </ul>
+  </div>
+
+  <div class = "no_bid_list">
+    <ul>
+      <% @homes_without_bids.each do | home| %>
+        <li class = "no_bid_items"> <%= puts "#{home.street} price #{home.price}" %>  </li>
+
+        <div id="new-bid">
+          <input id="new-bid-status" type="string" placeholder="What do you need to do?"/>
+          <button id="submit-bid-button">Enter Value</button>
+        </div>
+
+      <% end %>
+    </ul>
+  <div>

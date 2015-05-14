@@ -10,12 +10,22 @@ Rails.application.routes.draw do
 
   get    'signup'  => 'users#new'
 
+
   delete 'logout'  => 'sessions#destroy'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
+  # 
+  # get     'bid'    => 'bids#show'
 
+  resources :users, except: :index do
+    resources :homes, except: :index
+    resources :bids, only: :show
+  end
 
-  resources :users
+  resources :handlers do
+    resources :homes, except: [:index, :new]
+  end
+
 
 
 end

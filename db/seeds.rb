@@ -14,7 +14,7 @@
 users_array = [
   {
     email: "seekpeace@gmail.com",
-    name: "Enoch OhShin",
+    name: "Enoch Ohshin",
     number: 2224445555,
     password: "ImDaFool",
     password_confirmation: "ImDaFool"
@@ -320,10 +320,17 @@ homes_array.each do |home|
     current_home = Home.create!(home.except(:agent_status, :handler_name, :handler_work, :handler_fax, :handler_email))
 end
 
+# 10.times do
+#   rand_user_id = rand(User.count) + 1 # pk is 1 based
+#   rand_home_id = rand(Home.count) + 1 # pk is 1 based
+#   Bid.create!(user_id: rand_user_id, home_id: rand_home_id)
+# end
+
 10.times do
   rand_user_id = rand(User.count) + 1 # pk is 1 based
   rand_home_id = rand(Home.count) + 1 # pk is 1 based
-  Bid.create!(user_id: rand_user_id, home_id: rand_home_id)
+  # rand_value = rand(1..10)
+  Bid.create!(user_id: rand_user_id, home_id: rand_home_id, value: 987654)
 end
 
 #

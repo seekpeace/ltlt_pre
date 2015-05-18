@@ -14,13 +14,15 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  # 
+  #
   # get     'bid'    => 'bids#show'
+  get 'sent' => 'bids#sent'
 
   resources :users, except: :index do
     resources :homes, except: :index
     resources :bids, only: :show
   end
+
 
   resources :handlers do
     resources :homes, except: [:index, :new]

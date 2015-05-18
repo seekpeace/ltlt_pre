@@ -1,5 +1,5 @@
 class BidsController < UsersController
-  before_action :logged_in_user, only: [:edit, :update, :index]
+  before_action :logged_in_user, only: [:edit, :update, :index, :destroy]
   before_action :correct_user,   only: [:edit, :update]
 
   def show
@@ -13,10 +13,14 @@ class BidsController < UsersController
     # @bid = Bid.find(params[:id])
     # need to add id index to bids join table first
     # redirect_to @user
+    #
+    #
+    # pdf = Prawn::Document.new
+    # pdf.text "This is an ofer to buy your home at #{plot.street_address} for #{bid.value}"
+    # pdf.render_file "buy_offer#{bid.id}.pdf"
+  end
 
-
-    pdf = Prawn::Document.new
-    pdf.text "This is an ofer to buy your home at #{plot.street_address} for #{bid.value}"
-    pdf.render_file "buy_offer#{bid.id}.pdf"
+  def sent
+    # @user = User.find(params[:id])
   end
 end

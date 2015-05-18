@@ -1,23 +1,9 @@
 <script src="user_show.js"></script>
 
 <% provide(:title, "Bids") %>
-<h1><%= @bid.id %></h1>
-binding pry
-<div class="send_bid">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
 
-      <%= f.label :value, "Enter Bid Value" %>
-      <%= f.password_field :value, class: 'form-control' %>
+<%# Below is third party that handles electronic signature signing %>
 
-      <%= f.submit "send offer", class: "btn btn-primary btn-sm" %>
-    <% end %>
-  </div>
-</div>
 
-<ul>
-  <p>submitted</p>
-  <li><%= bid.value %></li>
 
-</ul>
+<%= link_to "final steps after sending your document", sent_path, class: "btn btn-lg btn-primary" %>

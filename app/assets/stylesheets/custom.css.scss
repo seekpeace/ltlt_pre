@@ -41,9 +41,11 @@ background-size: 100%;
 
 
 
-.navbar-inverse {
-  background-color: #E8E825;
-  }
+// .navbar-inverse {
+//   background-color: #E8E825;
+//   }
+
+  .navbar-inverse { background-color: #142103}
 
 // http://bootstrap3-menu.codedorigin.com/#sthash.4O9GLxRo.dpbs
 
@@ -188,3 +190,5 @@ input {
     border-bottom: 1px solid gray;
   }
 }
+
+div.second_review { float:left; }
